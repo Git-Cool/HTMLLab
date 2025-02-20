@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Percent Grid Flex</title>
+    <style>
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .image-container {
+            background-color: white;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .text {
+            font-weight: bold;
+            color: black;
+            font-size: 36px;
+        }
+
+       
+        .mygrid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 10px; 
+        }
+
+        .mygrid span {
+            font-size: 2em;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: block; 
+        }
+
+       
+        .myflex {
+            display: flex;
+            justify-content: center; 
+            gap: 10px; 
+        
+        .myflex span {
+            font-size: 2em;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <div class="mygrid">
+        <span>Be</span>
+        <span>One</span>
+        <span>Percent</span>
+        <span>Better</span>
+        <span>Than</span>
+        <span>Yesterday</span>
+
+        <span>Be</span>
+        <span>One</span>
+        <span>Percent</span>
+        <span>Better</span>
+        <span>Than</span>
+        <span>Yesterday</span>
+    </div>
+
+    <br />
+
+    
+    <div class="myflex">
+        <span>Be</span>
+        <span>One</span>
+        <span>Percent</span>
+        <span>Better</span>
+        <span>Than</span>
+        <span>Yesterday</span>
+
+        <span>Be</span>
+        <span>One</span>
+        <span>Percent</span>
+        <span>Better</span>
+        <span>Than</span>
+        <span>Yesterday</span>
+    </div>
+
+</body>
+</html>
