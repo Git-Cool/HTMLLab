@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: 'HeartBreakingBad';
+    src: url('../font/HeartBreakingBad.woff2') format('woff2'), 
+         url('../font/HeartBreakingBad.otf') format('opentype'); 
+}
+
+
+.breaking-bad-font {
+    font-family: 'HeartBreakingBad', sans-serif;
+    font-size: 72px; 
+    text-align: center;
+    color: limegreen; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+}
