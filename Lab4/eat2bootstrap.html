@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Where Should We Eat</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/eatbootstrap.css" rel="stylesheet" />
+    <style>
+      
+      .active-button {
+        background-color: red !important;
+        color: white !important;
+        border-color: red !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header id="title" class="fs-1 text-center mt-5">Where should we Eat?</header>
+      <div class="row">
+        <header id="info" class="col-12 col-md-8 offset-md-2 text-center mt-2">
+          A website that helps you decide where you should eat when you ask your
+          girlfriend, "So what do you want to eat?" and she responds, "I don't care."
+        </header>
+      </div>
+
+    
+      <section>
+        <div id="chip-5-days" class="row mt-5">
+          <h6 class="col-12 col-md-4 offset-md-4 text-center">
+            Has she had Chipotle in the last 5 days?
+          </h6>
+          <div class="col-6 col-md-4 offset-md-4 text-center">
+            <button
+              type="button"
+              class="btn btn-outline-secondary w-100"
+              onclick="selectOption('chipotle', 'Yes', this)"
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary w-100"
+              onclick="selectOption('chipotle', 'No', this)"
+            >
+              No
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="breakup" class="row mt-3">
+          <h6 class="col-12 col-md-4 offset-md-4 text-center">
+            Are you trying to break up with her?
+          </h6>
+          <div class="col-6 col-md-4 offset-md-4 text-center">
+            <button
+              type="button"
+              class="btn btn-outline-secondary w-100"
+              onclick="selectOption('breakup', 'Yes', this)"
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary w-100"
+              onclick="selectOption('breakup', 'No', this)"
+            >
+              No
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="datequestion" class="row mt-3">
+        <h6 class="col-12 col-md-4 offset-md-4 text-center">
+          What day of the week is it?
+        </h6>
+        <div class="col-12 col-md-4 offset-md-4">
+          <label class="d-block">
+            <input
+              type="radio"
+              name="dateq"
+              value="Mon-Wed"
+              onclick="selectOption('day', 'Monday-Wednesday', this)"
+            />
+            Monday-Wednesday
+          </label>
+          <label class="d-block">
+            <input
+              type="radio"
+              name="dateq"
+              value="Thu-Fri"
+              onclick="selectOption('day', 'Thursday-Friday', this)"
+            />
+            Thursday-Friday
+          </label>
+          <label class="d-block">
+            <input
+              type="radio"
+              name="dateq"
+              value="Sat-Sun"
+              onclick="selectOption('day', 'Saturday-Sunday', this)"
+            />
+            Saturday-Sunday
+          </label>
+        </div>
+      </section>
+
+      <section id="olivegarden" class="row mt-3">
+        <h6 class="col-12 col-md-4 offset-md-4 text-center">
+          How does she feel about Olive Garden?
+        </h6>
+        <div class="col-6 col-md-4 offset-md-4 text-center">
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            onclick="selectOption('olivegarden', 'Hates it', this)"
+          >
+            Hates it
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            onclick="selectOption('olivegarden', 'It\'s ok', this)"
+          >
+            It's ok
+          </button>
+        </div>
+      </section>
+
+      <section id="bloomingonion" class="row mt-3">
+        <h6 class="col-12 col-md-4 offset-md-4 text-center">
+          Does she like blooming onions?
+        </h6>
+        <div class="col-6 col-md-4 offset-md-4 text-center">
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            onclick="selectOption('bloomingonion', 'Yes', this)"
+          >
+            Yes
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            onclick="selectOption('bloomingonion', 'No', this)"
+          >
+            No
+          </button>
+        </div>
+      </section>
+
+      <section id="weekgoing" class="row mt-3">
+        <h6 class="col-12 col-md-4 offset-md-4 text-center">How's her week going?</h6>
+        <div class="col-6 col-md-4 offset-md-4 text-center">
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            onclick="selectOption('weekgoing', 'Horribly', this)"
+          >
+            Horribly
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            onclick="selectOption('weekgoing', 'Decently', this)"
+          >
+            Decently
+          </button>
+        </div>
+      </section>
+
+  
+      <div id="result" class="row mt-5 text-center">
+        <div class="col-12">
+          <h3>Suggested Restaurant: <span id="suggested-restaurant">TBD</span></h3>
+        </div>
+      </div>
+
+      <div class="row col-12 col-md-8 offset-md-2 mt-5 text-center">
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/chipotle.png"
+                class="object-fit-scale rounded img-fluid"
+                alt="Chipotle logo"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sonic.jpg"
+                class="object-fit-scale rounded img-fluid"
+                alt="Sonic logo"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/outback.png"
+                class="object-fit-scale rounded img-fluid"
+                alt="Outback logo"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/chilis.png"
+                class="object-fit-scale rounded img-fluid"
+                alt="Chili's logo"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/kfc.png"
+                class="object-fit-scale rounded img-fluid"
+                alt="KFC logo"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/olive-garden.png"
+                class="object-fit-scale rounded img-fluid"
+                alt="Olive Garden logo"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/panera.png"
+                class="object-fit-scale rounded img-fluid"
+                alt="Panera"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/chocolate.jpg"
+                class="object-fit-scale rounded img-fluid"
+                alt="Chocolate"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script>
+  
+      let selectedOptions = {};
+
+      function selectOption(question, answer, button) {
+      
+        selectedOptions[question] = answer;
+
+      
+        let buttons = button.parentNode.querySelectorAll('button');
+        buttons.forEach(btn => btn.classList.remove('active-button'));
+        button.classList.add('active-button');
+
+      
+        console.log(selectedOptions);
+
+    
+        if (Object.keys(selectedOptions).length === 5) {
+          showResult();
+        }
+      }
+
+    
+      function showResult() {
+        let restaurant = "TBD";
+
+    
+        if (selectedOptions['chipotle'] === 'Yes') {
+          restaurant = "Chipotle";
+        } else if (selectedOptions['weekgoing'] === 'Horribly') {
+          restaurant = "Chocolate";
+        } else {
+          restaurant = "Outback Steakhouse";
+        }
+
+    
+        document.getElementById("suggested-restaurant").innerText = restaurant;
+      }
+    </script>
+  </body>
+</html>
+      
+
+
+
